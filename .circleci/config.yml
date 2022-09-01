@@ -30,11 +30,6 @@ jobs:
             # Install hadolint
             wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
             chmod +x /bin/hadolint
-            ls -a
-            cd ..
-            ls -a
-            hadolint --ignore DL3013
-            
       - save_cache:
           paths:
             - ./venv
@@ -45,4 +40,5 @@ jobs:
           name: run lint
           command: |
             . venv/bin/activate
+            # 
             make lint
